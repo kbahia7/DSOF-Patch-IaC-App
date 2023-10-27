@@ -1,10 +1,6 @@
 resource "aws_s3_bucket" "insecure-bucket" {
   bucket = "insecure-bucket"
   logging = ""
-  versioning = {
-    Enabled = true
-    MfaDelete = true
-  }
 }
 
 # resource "aws_s3_bucket_public_access_block" "insecure-bucket" {
@@ -18,7 +14,8 @@ resource "aws_s3_bucket_versioning" "versioning_example" {
   bucket = aws_s3_bucket.insecure-bucket.id
   versioning_configuration {
     status = "Enabled"
-    MfaDelete = "Enabled"
+    mfa_elete = "Enabled"
+    mfa = ""
   }
 }
 
