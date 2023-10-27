@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "insecure-bucket" {
   bucket = "insecure-bucket"
   logging = ""
-  versioning {
+  versioning = {
     Enabled = true
     MfaDelete = true
   }
